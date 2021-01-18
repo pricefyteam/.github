@@ -20,7 +20,7 @@ jobs:
         dotnet-version: 5.0.x
 
     - name: Restore dependencies
-      run: dotnet restore ${{ secrets.SOLUTION_FILE }}
+      run: dotnet restore "SOLUTION_FILE"
     
     - name: Build
-      run: dotnet build ${{ secrets.SOLUTION_FILE }} --no-restore
+      run: dotnet build "SOLUTION_FILE" --no-restore
