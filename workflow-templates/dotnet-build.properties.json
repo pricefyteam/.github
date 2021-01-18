@@ -1,0 +1,9 @@
+{
+    "name": ".NET build Workflow",
+    "description": "Faz o build de projetos dotnet.",
+    "iconName": "build-icon",
+    "categories": [
+        ".NET"
+    ],
+    "filePatterns": []
+}

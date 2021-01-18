@@ -1,0 +1,26 @@
+name: Octo Organization CI
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    
+    - uses: actions/checkout@v2
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore ${{ secrets.SOLUTION_FILE }}
+    
+    - name: Build
+      run: dotnet build ${{ secrets.SOLUTION_FILE }} --no-restore
